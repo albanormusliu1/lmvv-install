@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shto Klient</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
+<div class="header">
+
+<img src="logo.png">
+
+<h2>Firma e Ngrohjes</h2>
+
+<a href="klientet.html">
+<button>Kthehu</button>
+</a>
+
+</div>
+
+
+
 <h1>Shto Klient të Ri</h1>
 
-<form onsubmit="ruajKlient(); return false;">
 
-<label>Emri i klientit</label><br>
-<input id="emri" type="text" placeholder="Shkruaj emrin"><br><br>
 
-<label>Numri i telefonit</label><br>
-<input id="telefoni" type="text" placeholder="Shkruaj telefonin"><br><br>
+<form id="formaKlientit">
 
-<label>Adresa</label><br>
-<input id="adresa" type="text" placeholder="Shkruaj adresën"><br><br>
 
-<label>Lloji i punës</label><br>
-<input id="puna" type="text" placeholder="p.sh. Montim ngrohjeje"><br><br>
+<input id="emri" placeholder="Emri i klientit" required>
 
-<button type="submit">Ruaj klientin</button>
+<br><br>
+
+
+<input id="telefoni" placeholder="Telefoni" required>
+
+<br><br>
+
+
+<input id="adresa" placeholder="Adresa" required>
+
+<br><br>
+
+
+<button type="submit">
+Ruaj Klientin
+</button>
+
 
 </form>
 
-<br>
 
-<a href="klientet.html">
-<button>Kthehu te klientët</button>
-</a>
 
-<script src="klientet.js"></script>
+<script type="module" src="klientet-firebase.js"></script>
+
 
 </body>
+
 </html>
