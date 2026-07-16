@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Faturë Online</title>
+<title>Faturat - Firma Ngrohje</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -16,10 +16,9 @@
 <body>
 
 
-
 <div class="header">
 
-<img src="img_9540jpeg" alt="Logo">
+<img src="IMG_9545.jpeg" alt="Logo">
 
 
 <h2>Firma e Ngrohjes</h2>
@@ -38,112 +37,75 @@ Dashboard
 
 
 
+<h1>Menaxhimi i Faturave</h1>
 
-<div class="fatura-box">
 
 
+<a href="shto-fature.html">
 
-<h1>FATURË ELEKTRONIKE</h1>
+<button>
++ Shto Faturë
+</button>
 
+</a>
 
 
-<hr>
 
+<br><br>
 
 
-<div class="fatura-info">
 
+<a href="fatura-online.html">
 
+<button>
+Shiko Faturën Online
+</button>
 
-<p>
+</a>
 
-<b>Nr. Faturës:</b>
 
-<span id="nr"></span>
 
-</p>
+<br><br>
 
 
 
+<table>
 
-<p>
 
-<b>Klienti:</b>
+<thead>
 
-<span id="klienti"></span>
+<tr>
 
-</p>
+<th>ID</th>
 
+<th>Klienti</th>
 
+<th>Përshkrimi</th>
 
+<th>Totali</th>
 
-<p>
+<th>Statusi</th>
 
-<b>Përshkrimi i punës:</b>
+<th>Veprime</th>
 
-<span id="pershkrimi"></span>
+</tr>
 
-</p>
+</thead>
 
 
 
+<tbody id="listaFaturave">
 
-<p>
 
-<b>Materialet:</b>
+</tbody>
 
-<span id="materialet"></span>
 
-</p>
 
+</table>
 
 
-</div>
 
-
-
-
-<h2 class="totali">
-
-Totali:
-
-<span id="totali"></span> €
-
-</h2>
-
-
-
-
-<h3>
-
-Statusi:
-
-<span id="statusi"></span>
-
-</h3>
-
-
-
-
-<hr>
-
-
-
-
-<p>
-
-Faleminderit për besimin tuaj.
-
-</p>
-
-
-
-</div>
-
-
-
-
-<script src="fatura-online.js"></script>
+<script src="faturat-lista.js"></script>
 
 
 </body>
