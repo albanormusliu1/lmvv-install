@@ -2,6 +2,7 @@
 <html lang="sq">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,23 +16,37 @@
 <body>
 
 
-<img src="logo.png" width="150" alt="Logo e firmës">
+<div class="header">
+
+<img src="logo.png" alt="Logo">
+
+<h2>Firma e Ngrohjes</h2>
+
+</div>
 
 
-<h1>Firma e Ngrohjes</h1>
 
-<h2>Hyrje në sistem</h2>
+<h1>Hyrje në sistem</h1>
+
 
 
 <form onsubmit="login(); return false;">
 
 
 <label>Përdoruesi</label><br>
-<input id="username" type="text" placeholder="Shkruaj username"><br><br>
+
+<input id="username" type="text" placeholder="Shkruaj username">
+
+
+<br><br>
 
 
 <label>Fjalëkalimi</label><br>
-<input id="password" type="password" placeholder="Shkruaj password"><br><br>
+
+<input id="password" type="password" placeholder="Shkruaj password">
+
+
+<br><br>
 
 
 <button type="submit">Hyr</button>
@@ -40,7 +55,9 @@
 </form>
 
 
+
 <script src="perdoruesit.js"></script>
+
 <script src="script.js"></script>
 
 
