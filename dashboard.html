@@ -12,25 +12,36 @@
 
 </head>
 
+
 <body>
+
 
 <div class="header">
 
-<img src="logo.png" alt="Logo">
+<img src="img_9540jpeg" alt="Logo">
+
 
 <h2>Firma e Ngrohjes</h2>
 
-<button onclick="dalja()">Dil</button>
+
+<button onclick="dalja()">
+Dil
+</button>
+
 
 </div>
 
 
+
 <h1>Paneli i Menaxhimit</h1>
+
 
 <h3 id="pershendetje"></h3>
 
 
+
 <div class="cards">
+
 
 <a href="klientet.html" class="card">
 
@@ -39,6 +50,7 @@
 <p>Klientët</p>
 
 </a>
+
 
 
 <a href="punetoret.html" class="card">
@@ -50,6 +62,7 @@
 </a>
 
 
+
 <a href="punet.html" class="card">
 
 <h2>🔧</h2>
@@ -57,6 +70,7 @@
 <p>Punët</p>
 
 </a>
+
 
 
 <a href="materialet.html" class="card">
@@ -68,6 +82,7 @@
 </a>
 
 
+
 <a href="faturat.html" class="card">
 
 <h2>💶</h2>
@@ -75,6 +90,7 @@
 <p>Faturat</p>
 
 </a>
+
 
 
 <a href="raportet.html" class="card">
@@ -85,13 +101,17 @@
 
 </a>
 
+
 </div>
+
 
 
 <br><br>
 
 
+
 <div class="cards">
+
 
 <div class="card">
 
@@ -100,6 +120,7 @@
 <p>Klientë</p>
 
 </div>
+
 
 
 <div class="card">
@@ -111,6 +132,7 @@
 </div>
 
 
+
 <div class="card">
 
 <h2 id="nrPuneve">0</h2>
@@ -118,6 +140,7 @@
 <p>Punë</p>
 
 </div>
+
 
 
 <div class="card">
@@ -129,6 +152,7 @@
 </div>
 
 
+
 <div class="card">
 
 <h2 id="nrFaturave">0</h2>
@@ -137,12 +161,17 @@
 
 </div>
 
+
 </div>
+
+
 
 
 <script>
 
+
 let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
+
 
 if(!perdoruesi){
 
@@ -150,24 +179,44 @@ window.location.href="login.html";
 
 }
 
+
+
 document.getElementById("pershendetje").innerHTML =
+
 "Mirë se erdhe, " + perdoruesi.username;
 
 
+
+
 document.getElementById("nrKlienteve").innerHTML =
+
 (JSON.parse(localStorage.getItem("klientet")) || []).length;
 
+
+
 document.getElementById("nrPuntoreve").innerHTML =
+
 (JSON.parse(localStorage.getItem("puntoret")) || []).length;
 
+
+
 document.getElementById("nrPuneve").innerHTML =
+
 (JSON.parse(localStorage.getItem("punet")) || []).length;
 
+
+
 document.getElementById("nrMaterialeve").innerHTML =
+
 (JSON.parse(localStorage.getItem("materialet")) || []).length;
 
+
+
 document.getElementById("nrFaturave").innerHTML =
+
 (JSON.parse(localStorage.getItem("faturat")) || []).length;
+
+
 
 
 function dalja(){
@@ -178,7 +227,9 @@ window.location.href="login.html";
 
 }
 
+
 </script>
+
 
 </body>
 
