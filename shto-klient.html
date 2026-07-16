@@ -11,19 +11,19 @@
 
 <h1>Shto Klient të Ri</h1>
 
-<form>
+<form onsubmit="ruajKlient(); return false;">
 
 <label>Emri i klientit</label><br>
-<input type="text" placeholder="Shkruaj emrin"><br><br>
+<input id="emri" type="text" placeholder="Shkruaj emrin"><br><br>
 
 <label>Numri i telefonit</label><br>
-<input type="text" placeholder="Shkruaj telefonin"><br><br>
+<input id="telefoni" type="text" placeholder="Shkruaj telefonin"><br><br>
 
 <label>Adresa</label><br>
-<input type="text" placeholder="Shkruaj adresën"><br><br>
+<input id="adresa" type="text" placeholder="Shkruaj adresën"><br><br>
 
 <label>Lloji i punës</label><br>
-<input type="text" placeholder="p.sh. Montim ngrohjeje"><br><br>
+<input id="puna" type="text" placeholder="p.sh. Montim ngrohjeje"><br><br>
 
 <button type="submit">Ruaj klientin</button>
 
@@ -34,6 +34,8 @@
 <a href="klientet.html">
 <button>Kthehu te klientët</button>
 </a>
+
+<script src="klientet.js"></script>
 
 </body>
 </html>
