@@ -6,15 +6,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard - Firma Ngrohje</title>
+<title>Dashboard - Firma e Ngrohjes</title>
 
 <link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
-
 
 <div class="header">
 
@@ -22,20 +20,78 @@
 
 <h2>Firma e Ngrohjes</h2>
 
+<button onclick="dalja()">Dil</button>
 
 </div>
 
 
-
 <h1>Paneli i Menaxhimit</h1>
-
 
 <h3 id="pershendetje"></h3>
 
 
-
 <div class="cards">
 
+<a href="klientet.html" class="card">
+
+<h2>👥</h2>
+
+<p>Klientët</p>
+
+</a>
+
+
+<a href="punetoret.html" class="card">
+
+<h2>👷</h2>
+
+<p>Punëtorët</p>
+
+</a>
+
+
+<a href="punet.html" class="card">
+
+<h2>🔧</h2>
+
+<p>Punët</p>
+
+</a>
+
+
+<a href="materialet.html" class="card">
+
+<h2>📦</h2>
+
+<p>Materialet</p>
+
+</a>
+
+
+<a href="faturat.html" class="card">
+
+<h2>💶</h2>
+
+<p>Faturat</p>
+
+</a>
+
+
+<a href="raportet.html" class="card">
+
+<h2>📈</h2>
+
+<p>Raportet</p>
+
+</a>
+
+</div>
+
+
+<br><br>
+
+
+<div class="cards">
 
 <div class="card">
 
@@ -81,31 +137,12 @@
 
 </div>
 
-
 </div>
-
-
-
-<br>
-
-
-
-<div id="menu" class="cards"></div>
-
-
-
-<br>
-
-
-<button onclick="dalja()">Dil</button>
-
 
 
 <script>
 
-
 let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
-
 
 if(!perdoruesi){
 
@@ -113,57 +150,24 @@ window.location.href="login.html";
 
 }
 
-
-
 document.getElementById("pershendetje").innerHTML =
-
-"Mirë se erdhe: " + perdoruesi.username;
-
+"Mirë se erdhe, " + perdoruesi.username;
 
 
 document.getElementById("nrKlienteve").innerHTML =
 (JSON.parse(localStorage.getItem("klientet")) || []).length;
 
-
 document.getElementById("nrPuntoreve").innerHTML =
 (JSON.parse(localStorage.getItem("puntoret")) || []).length;
-
 
 document.getElementById("nrPuneve").innerHTML =
 (JSON.parse(localStorage.getItem("punet")) || []).length;
 
-
 document.getElementById("nrMaterialeve").innerHTML =
 (JSON.parse(localStorage.getItem("materialet")) || []).length;
 
-
 document.getElementById("nrFaturave").innerHTML =
 (JSON.parse(localStorage.getItem("faturat")) || []).length;
-
-
-
-let menu = document.getElementById("menu");
-
-
-
-if(perdoruesi.roli === "admin"){
-
-menu.innerHTML = `
-
-<a href="klientet.html" class="card">👥 Klientët</a>
-
-<a href="punetoret.html" class="card">👷 Punëtorët</a>
-
-<a href="punet.html" class="card">🔧 Punët</a>
-
-<a href="materialet.html" class="card">📦 Materialet</a>
-
-<a href="faturat.html" class="card">💶 Faturat</a>
-
-`;
-
-}
-
 
 
 function dalja(){
@@ -174,9 +178,7 @@ window.location.href="login.html";
 
 }
 
-
 </script>
-
 
 </body>
 
