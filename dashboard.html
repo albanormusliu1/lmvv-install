@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Paneli - Firma Ngrohje</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<h1>Paneli i Firmës së Ngrohjes</h1>
+
+<img src="logo.png" width="150" alt="Logo e firmës">
+
+
+<h1>Firma e Ngrohjes</h1>
+
+<h2>Paneli i Menaxhimit</h2>
+
 
 <h3 id="pershendetje"></h3>
 
-<div id="menu">
 
-</div>
+<div id="menu"></div>
+
 
 <br>
+
 
 <button onclick="dalja()">Dil</button>
 
 
+
 <script>
 
+
 let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
+
 
 if(!perdoruesi){
 
@@ -33,54 +50,71 @@ if(!perdoruesi){
 }
 
 
+
 document.getElementById("pershendetje").innerHTML =
 "Mirë se erdhe: " + perdoruesi.username +
 " (" + perdoruesi.roli + ")";
 
 
+
 let menu = document.getElementById("menu");
+
 
 
 if(perdoruesi.roli === "admin"){
 
+
 menu.innerHTML = `
+
 
 <a href="klientet.html">
 <button>Klientët</button>
 </a>
 
+
 <a href="punetoret.html">
 <button>Punëtorët</button>
 </a>
+
 
 <a href="punet.html">
 <button>Punët</button>
 </a>
 
+
 <a href="materialet.html">
 <button>Materialet</button>
 </a>
+
 
 <a href="faturat.html">
 <button>Faturat</button>
 </a>
 
+
 `;
 
+
 }
+
 
 
 if(perdoruesi.roli === "punetor"){
 
+
 menu.innerHTML = `
 
+
 <a href="punet.html">
-<button>Punët e mia</button>
+<button>Punët</button>
 </a>
+
 
 `;
 
+
 }
+
 
 
 
@@ -92,8 +126,10 @@ window.location.href="login.html";
 
 }
 
+
 </script>
 
 
 </body>
+
 </html>
