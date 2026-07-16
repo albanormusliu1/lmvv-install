@@ -1,47 +1,16 @@
-import { db } from "./firebase.js";
-
-
-import {
-
-collection,
-
-getDocs
-
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-
+let klientet = JSON.parse(localStorage.getItem("klientet")) || [];
 
 let tabela = document.getElementById("listaKlienteve");
 
 
-
-async function shfaqKlientet(){
-
-
-let klientet = await getDocs(
-
-collection(db,"klientet")
-
-);
-
-
-
-let numer = 1;
-
-
-
-klientet.forEach((doc)=>{
-
-
-let klienti = doc.data();
-
+klientet.forEach((klienti,index)=>{
 
 
 tabela.innerHTML += `
 
 <tr>
 
-<td>${numer}</td>
+<td>${index + 1}</td>
 
 <td>${klienti.emri}</td>
 
@@ -49,20 +18,33 @@ tabela.innerHTML += `
 
 <td>${klienti.adresa}</td>
 
+
+<td>
+
+<button onclick="editoKlient(${index})">
+✏️ Edit
+</button>
+
+
+</td>
+
 </tr>
 
 `;
 
-
-
-numer++;
-
-
 });
 
 
+
+function editoKlient(index){
+
+localStorage.setItem(
+"klientEdit",
+index
+);
+
+
+window.location.href="edit-klient.html";
+
+
 }
-
-
-
-shfaqKlientet();
