@@ -1,90 +1,69 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paneli - Firma Ngrohje</title>
+
+<title>Punëtorët - Firma Ngrohje</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<h1>Paneli i Firmës së Ngrohjes</h1>
 
-<h3 id="pershendetje"></h3>
+<h1>Menaxhimi i Punëtorëve</h1>
 
-<div id="menu"></div>
+
+<a href="shto-punetor.html">
+    <button>+ Shto Punëtor</button>
+</a>
+
+
+<br><br>
+
+
+<table border="1" width="90%" align="center">
+
+
+<thead>
+
+<tr>
+    <th>ID</th>
+    <th>Emri</th>
+    <th>Telefoni</th>
+    <th>Pozita</th>
+</tr>
+
+</thead>
+
+
+<tbody id="listaPuntoreve">
+
+
+</tbody>
+
+
+</table>
+
 
 <br>
 
-<button onclick="dalja()">Dil</button>
 
+<a href="dashboard.html">
 
-<script>
+<button>Kthehu te Paneli</button>
 
-let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
-
-if(!perdoruesi){
-    window.location.href = "login.html";
-}
-
-document.getElementById("pershendetje").innerHTML =
-"Mirë se erdhe: " + perdoruesi.username;
-
-
-let menu = document.getElementById("menu");
-
-
-if(perdoruesi.roli === "admin"){
-
-menu.innerHTML = `
-
-<a href="klientet.html">
-<button>Klientët</button>
 </a>
 
-<a href="punetoret.html">
-<button>Punëtorët</button>
-</a>
 
-<a href="punet.html">
-<button>Punët</button>
-</a>
+<script src="puntoret-lista.js"></script>
 
-<a href="materialet.html">
-<button>Materialet</button>
-</a>
-
-<a href="faturat.html">
-<button>Faturat</button>
-</a>
-
-`;
-
-}
-
-
-if(perdoruesi.roli === "punetor"){
-
-menu.innerHTML = `
-
-<a href="punet.html">
-<button>Punët</button>
-</a>
-
-`;
-
-}
-
-
-function dalja(){
-
-localStorage.removeItem("perdoruesAktiv");
-window.location.href="login.html";
-
-}
-
-</script>
 
 </body>
+
 </html>
