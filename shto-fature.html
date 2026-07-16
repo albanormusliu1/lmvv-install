@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shto Faturë</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Krijo Faturë të Re</h1>
+
+<form onsubmit="ruajFature(); return false;">
+
+<label>Emri i klientit</label><br>
+<input id="klienti" type="text" placeholder="Shkruaj klientin"><br><br>
+
+<label>Përshkrimi i punës</label><br>
+<input id="pershkrimi" type="text" placeholder="p.sh. Montim ngrohjeje"><br><br>
+
+<label>Materialet</label><br>
+<input id="materialet" type="text" placeholder="p.sh. Radiator, tuba"><br><br>
+
+<label>Totali (€)</label><br>
+<input id="totali" type="number" placeholder="Shkruaj shumën"><br><br>
+
+<label>Statusi i pagesës</label><br>
+
+<select id="statusi">
+    <option>Pa paguar</option>
+    <option>Pjesërisht paguar</option>
+    <option>Paguar</option>
+</select>
+
+<br><br>
+
+<button type="submit">Ruaj Faturën</button>
+
+</form>
+
+<br>
+
+<a href="faturat.html">
+<button>Kthehu te Faturat</button>
+</a>
+
+<script src="faturat.js"></script>
+
+</body>
+</html>
