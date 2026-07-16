@@ -22,9 +22,6 @@
 
 <h2>Firma e Ngrohjes</h2>
 
-<a href="dashboard.html">
-<button>Dashboard</button>
-</a>
 
 </div>
 
@@ -37,11 +34,68 @@
 
 
 
+<div class="cards">
+
+
+<div class="card">
+
+<h2 id="nrKlienteve">0</h2>
+
+<p>Klientë</p>
+
+</div>
+
+
+<div class="card">
+
+<h2 id="nrPuntoreve">0</h2>
+
+<p>Punëtorë</p>
+
+</div>
+
+
+<div class="card">
+
+<h2 id="nrPuneve">0</h2>
+
+<p>Punë</p>
+
+</div>
+
+
+<div class="card">
+
+<h2 id="nrMaterialeve">0</h2>
+
+<p>Materiale</p>
+
+</div>
+
+
+<div class="card">
+
+<h2 id="nrFaturave">0</h2>
+
+<p>Fatura</p>
+
+</div>
+
+
+</div>
+
+
+
+<br>
+
+
+
 <div id="menu" class="cards"></div>
 
 
 
 <br>
+
 
 <button onclick="dalja()">Dil</button>
 
@@ -63,8 +117,28 @@ window.location.href="login.html";
 
 document.getElementById("pershendetje").innerHTML =
 
-"Mirë se erdhe: " + perdoruesi.username +
-" (" + perdoruesi.roli + ")";
+"Mirë se erdhe: " + perdoruesi.username;
+
+
+
+document.getElementById("nrKlienteve").innerHTML =
+(JSON.parse(localStorage.getItem("klientet")) || []).length;
+
+
+document.getElementById("nrPuntoreve").innerHTML =
+(JSON.parse(localStorage.getItem("puntoret")) || []).length;
+
+
+document.getElementById("nrPuneve").innerHTML =
+(JSON.parse(localStorage.getItem("punet")) || []).length;
+
+
+document.getElementById("nrMaterialeve").innerHTML =
+(JSON.parse(localStorage.getItem("materialet")) || []).length;
+
+
+document.getElementById("nrFaturave").innerHTML =
+(JSON.parse(localStorage.getItem("faturat")) || []).length;
 
 
 
@@ -74,79 +148,17 @@ let menu = document.getElementById("menu");
 
 if(perdoruesi.roli === "admin"){
 
-
 menu.innerHTML = `
 
+<a href="klientet.html" class="card">👥 Klientët</a>
 
-<a href="klientet.html" class="card">
+<a href="punetoret.html" class="card">👷 Punëtorët</a>
 
-<h2>👥</h2>
+<a href="punet.html" class="card">🔧 Punët</a>
 
-<p>Klientët</p>
+<a href="materialet.html" class="card">📦 Materialet</a>
 
-</a>
-
-
-
-<a href="punetoret.html" class="card">
-
-<h2>👷</h2>
-
-<p>Punëtorët</p>
-
-</a>
-
-
-
-<a href="punet.html" class="card">
-
-<h2>🔧</h2>
-
-<p>Punët</p>
-
-</a>
-
-
-
-<a href="materialet.html" class="card">
-
-<h2>📦</h2>
-
-<p>Materialet</p>
-
-</a>
-
-
-
-<a href="faturat.html" class="card">
-
-<h2>💶</h2>
-
-<p>Faturat</p>
-
-</a>
-
-
-`;
-
-}
-
-
-
-if(perdoruesi.roli === "punetor"){
-
-
-menu.innerHTML = `
-
-
-<a href="punet.html" class="card">
-
-<h2>🔧</h2>
-
-<p>Punët e mia</p>
-
-</a>
-
+<a href="faturat.html" class="card">💶 Faturat</a>
 
 `;
 
