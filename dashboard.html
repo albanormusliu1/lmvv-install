@@ -16,18 +16,29 @@
 <body>
 
 
-<img src="logo.png" width="150" alt="Logo e firmës">
+<div class="header">
+
+<img src="logo.png" alt="Logo">
+
+<h2>Firma e Ngrohjes</h2>
+
+<a href="dashboard.html">
+<button>Dashboard</button>
+</a>
+
+</div>
 
 
-<h1>Firma e Ngrohjes</h1>
 
-<h2>Dashboard</h2>
+<h1>Paneli i Menaxhimit</h1>
 
 
 <h3 id="pershendetje"></h3>
 
 
+
 <div id="menu" class="cards"></div>
+
 
 
 <br>
@@ -51,7 +62,9 @@ window.location.href="login.html";
 
 
 document.getElementById("pershendetje").innerHTML =
-"Mirë se erdhe: " + perdoruesi.username;
+
+"Mirë se erdhe: " + perdoruesi.username +
+" (" + perdoruesi.roli + ")";
 
 
 
@@ -66,32 +79,51 @@ menu.innerHTML = `
 
 
 <a href="klientet.html" class="card">
+
 <h2>👥</h2>
+
 <p>Klientët</p>
+
 </a>
+
 
 
 <a href="punetoret.html" class="card">
+
 <h2>👷</h2>
+
 <p>Punëtorët</p>
+
 </a>
+
 
 
 <a href="punet.html" class="card">
+
 <h2>🔧</h2>
+
 <p>Punët</p>
+
 </a>
+
 
 
 <a href="materialet.html" class="card">
+
 <h2>📦</h2>
+
 <p>Materialet</p>
+
 </a>
 
 
+
 <a href="faturat.html" class="card">
+
 <h2>💶</h2>
+
 <p>Faturat</p>
+
 </a>
 
 
