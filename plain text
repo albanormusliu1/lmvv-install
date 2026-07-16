@@ -1,0 +1,18 @@
+let faturat = JSON.parse(localStorage.getItem("faturat")) || [];
+
+let tabela = document.getElementById("listaFaturave");
+
+
+faturat.forEach((fature, index) => {
+
+    tabela.innerHTML += `
+    <tr>
+        <td>${index + 1}</td>
+        <td>${fature.klienti}</td>
+        <td>${fature.pershkrimi}</td>
+        <td>${fature.totali} €</td>
+        <td>${fature.statusi}</td>
+    </tr>
+    `;
+
+});
