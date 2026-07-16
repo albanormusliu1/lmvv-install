@@ -9,7 +9,45 @@ body {
 }
 
 
-/* Logo */
+/* HEADER */
+
+.header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+
+    padding: 15px 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+    margin-bottom: 30px;
+
+}
+
+
+.header img {
+
+    width: 80px;
+    height: auto;
+
+}
+
+
+.header h2 {
+
+    color: #1f4e79;
+    margin: 0;
+
+}
+
+
+
+/* LOGO */
 
 img {
 
@@ -19,13 +57,13 @@ img {
 }
 
 
-/* Tituj */
+
+/* TITULLAT */
 
 h1 {
 
     color: #1f4e79;
     font-size: 34px;
-    margin-bottom: 10px;
 
 }
 
@@ -45,11 +83,12 @@ h3 {
 
 
 
-/* Butonat */
+/* BUTONAT */
 
 button {
 
     background-color: #1f4e79;
+
     color: white;
 
     border: none;
@@ -72,13 +111,14 @@ button {
 button:hover {
 
     background-color: #163a5c;
+
     transform: scale(1.05);
 
 }
 
 
 
-/* Linket */
+/* LINKET */
 
 a {
 
@@ -88,7 +128,7 @@ a {
 
 
 
-/* Format */
+/* INPUTET */
 
 input, select {
 
@@ -106,11 +146,31 @@ input, select {
 
 
 
-/* Tabelat */
+/* FORMULARËT */
+
+form {
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 350px;
+
+    margin: 30px auto;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* TABELAT */
 
 table {
 
-    background-color: white;
+    background: white;
 
     border-collapse: collapse;
 
@@ -153,7 +213,7 @@ tr:hover {
 
 
 
-/* Dashboard Cards */
+/* DASHBOARD CARDS */
 
 .cards {
 
@@ -192,23 +252,11 @@ tr:hover {
 }
 
 
-
 .card h2 {
 
     font-size: 40px;
 
-    margin: 5px;
-
 }
-
-
-
-.card p {
-
-    font-weight: bold;
-
-}
-
 
 
 .card:hover {
@@ -219,30 +267,37 @@ tr:hover {
 
 
 
-/* Forma */
+/* MOBILE */
 
-form {
+@media(max-width:600px){
 
-    background:white;
+    .header {
 
-    padding:30px;
+        flex-direction: column;
 
-    border-radius:15px;
+        gap: 15px;
 
-    width:350px;
-
-    margin:30px auto;
-
-    box-shadow:0 4px 12px rgba(0,0,0,0.15);
-
-}
+    }
 
 
+    .card {
 
-/* Butoni kthim */
+        width: 80%;
 
-.back {
+    }
 
-    margin-top:20px;
+
+    form {
+
+        width: 90%;
+
+    }
+
+
+    input, select {
+
+        width: 90%;
+
+    }
 
 }
