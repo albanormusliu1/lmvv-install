@@ -11,6 +11,8 @@
 
 <h1>Paneli i Firmës së Ngrohjes</h1>
 
+<h3 id="pershendetje"></h3>
+
 <div>
 
     <a href="klientet.html">
@@ -35,7 +37,37 @@
 
 </div>
 
-<p>Mirë se vini në sistemin e menaxhimit.</p>
+<br>
+
+<button onclick="dalja()">Dil</button>
+
+
+<script>
+
+let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
+
+if(perdoruesi){
+
+    document.getElementById("pershendetje").innerHTML =
+    "Mirë se erdhe: " + perdoruesi.username + 
+    " (" + perdoruesi.roli + ")";
+
+}else{
+
+    window.location.href = "login.html";
+
+}
+
+
+function dalja(){
+
+    localStorage.removeItem("perdoruesAktiv");
+    window.location.href = "login.html";
+
+}
+
+</script>
+
 
 </body>
 </html>
