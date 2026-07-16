@@ -13,27 +13,7 @@
 
 <h3 id="pershendetje"></h3>
 
-<div>
-
-    <a href="klientet.html">
-        <button>Klientët</button>
-    </a>
-
-    <a href="punetoret.html">
-        <button>Punëtorët</button>
-    </a>
-
-    <a href="punet.html">
-        <button>Punët</button>
-    </a>
-
-    <a href="materialet.html">
-        <button>Materialet</button>
-    </a>
-
-    <a href="faturat.html">
-        <button>Faturat</button>
-    </a>
+<div id="menu">
 
 </div>
 
@@ -46,23 +26,69 @@
 
 let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
 
-if(perdoruesi){
-
-    document.getElementById("pershendetje").innerHTML =
-    "Mirë se erdhe: " + perdoruesi.username + 
-    " (" + perdoruesi.roli + ")";
-
-}else{
+if(!perdoruesi){
 
     window.location.href = "login.html";
 
 }
 
 
+document.getElementById("pershendetje").innerHTML =
+"Mirë se erdhe: " + perdoruesi.username +
+" (" + perdoruesi.roli + ")";
+
+
+let menu = document.getElementById("menu");
+
+
+if(perdoruesi.roli === "admin"){
+
+menu.innerHTML = `
+
+<a href="klientet.html">
+<button>Klientët</button>
+</a>
+
+<a href="punetoret.html">
+<button>Punëtorët</button>
+</a>
+
+<a href="punet.html">
+<button>Punët</button>
+</a>
+
+<a href="materialet.html">
+<button>Materialet</button>
+</a>
+
+<a href="faturat.html">
+<button>Faturat</button>
+</a>
+
+`;
+
+}
+
+
+if(perdoruesi.roli === "punetor"){
+
+menu.innerHTML = `
+
+<a href="punet.html">
+<button>Punët e mia</button>
+</a>
+
+`;
+
+}
+
+
+
 function dalja(){
 
-    localStorage.removeItem("perdoruesAktiv");
-    window.location.href = "login.html";
+localStorage.removeItem("perdoruesAktiv");
+
+window.location.href="login.html";
 
 }
 
