@@ -1,49 +1,73 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shto Punë</title>
+
+<title>Shto Punëtor</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<h1>Shto Punë të Re</h1>
 
-<form onsubmit="ruajPune(); return false;">
+<div class="header">
 
-<label>Emri i klientit</label><br>
-<input id="klienti" type="text" placeholder="Shkruaj klientin"><br><br>
+<img src="logo.png" alt="Logo">
 
-<label>Punëtori përgjegjës</label><br>
-<input id="punetori" type="text" placeholder="Shkruaj punëtorin"><br><br>
+<h2>Firma e Ngrohjes</h2>
 
-<label>Lloji i punës</label><br>
-<input id="lloji" type="text" placeholder="p.sh. Montim kaldaje"><br><br>
 
-<label>Statusi</label><br>
+<a href="punetoret.html">
 
-<select id="statusi">
-    <option>Në pritje</option>
-    <option>Në proces</option>
-    <option>Përfunduar</option>
-</select>
+<button>Kthehu</button>
 
-<br><br>
-
-<button type="submit">Ruaj Punën</button>
-
-</form>
-
-<br>
-
-<a href="punet.html">
-<button>Kthehu te Punët</button>
 </a>
 
 
-<script src="punet.js"></script>
+</div>
+
+
+
+<h1>Shto Punëtor të Ri</h1>
+
+
+
+<form id="formaPuntorit">
+
+
+<input id="emri" placeholder="Emri i punëtorit" required>
+
+<br><br>
+
+
+<input id="telefoni" placeholder="Telefoni" required>
+
+<br><br>
+
+
+<input id="pozita" placeholder="Pozita" required>
+
+<br><br>
+
+
+<button type="submit">
+Ruaj Punëtorin
+</button>
+
+
+</form>
+
+
+
+<script type="module" src="puntoret-firebase.js"></script>
+
 
 </body>
+
 </html>
