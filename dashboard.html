@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Paneli - Firma Ngrohje</title>
+<title>Dashboard - Firma Ngrohje</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -21,17 +21,16 @@
 
 <h1>Firma e Ngrohjes</h1>
 
-<h2>Paneli i Menaxhimit</h2>
+<h2>Dashboard</h2>
 
 
 <h3 id="pershendetje"></h3>
 
 
-<div id="menu"></div>
+<div id="menu" class="cards"></div>
 
 
 <br>
-
 
 <button onclick="dalja()">Dil</button>
 
@@ -45,15 +44,14 @@ let perdoruesi = JSON.parse(localStorage.getItem("perdoruesAktiv"));
 
 if(!perdoruesi){
 
-    window.location.href = "login.html";
+window.location.href="login.html";
 
 }
 
 
 
 document.getElementById("pershendetje").innerHTML =
-"Mirë se erdhe: " + perdoruesi.username +
-" (" + perdoruesi.roli + ")";
+"Mirë se erdhe: " + perdoruesi.username;
 
 
 
@@ -67,33 +65,37 @@ if(perdoruesi.roli === "admin"){
 menu.innerHTML = `
 
 
-<a href="klientet.html">
-<button>Klientët</button>
+<a href="klientet.html" class="card">
+<h2>👥</h2>
+<p>Klientët</p>
 </a>
 
 
-<a href="punetoret.html">
-<button>Punëtorët</button>
+<a href="punetoret.html" class="card">
+<h2>👷</h2>
+<p>Punëtorët</p>
 </a>
 
 
-<a href="punet.html">
-<button>Punët</button>
+<a href="punet.html" class="card">
+<h2>🔧</h2>
+<p>Punët</p>
 </a>
 
 
-<a href="materialet.html">
-<button>Materialet</button>
+<a href="materialet.html" class="card">
+<h2>📦</h2>
+<p>Materialet</p>
 </a>
 
 
-<a href="faturat.html">
-<button>Faturat</button>
+<a href="faturat.html" class="card">
+<h2>💶</h2>
+<p>Faturat</p>
 </a>
 
 
 `;
-
 
 }
 
@@ -105,16 +107,18 @@ if(perdoruesi.roli === "punetor"){
 menu.innerHTML = `
 
 
-<a href="punet.html">
-<button>Punët</button>
+<a href="punet.html" class="card">
+
+<h2>🔧</h2>
+
+<p>Punët e mia</p>
+
 </a>
 
 
 `;
 
-
 }
-
 
 
 
