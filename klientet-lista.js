@@ -1,17 +1,68 @@
-let klientet = JSON.parse(localStorage.getItem("klientet")) || [];
+import { db } from "./firebase.js";
+
+
+import {
+
+collection,
+
+getDocs
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
 
 let tabela = document.getElementById("listaKlienteve");
 
-klientet.forEach((klient, index) => {
 
-    tabela.innerHTML += `
-    <tr>
-        <td>${index + 1}</td>
-        <td>${klient.emri}</td>
-        <td>${klient.telefoni}</td>
-        <td>${klient.adresa}</td>
-        <td>${klient.puna}</td>
-    </tr>
-    `;
+
+async function shfaqKlientet(){
+
+
+let klientet = await getDocs(
+
+collection(db,"klientet")
+
+);
+
+
+
+let numer = 1;
+
+
+
+klientet.forEach((doc)=>{
+
+
+let klienti = doc.data();
+
+
+
+tabela.innerHTML += `
+
+<tr>
+
+<td>${numer}</td>
+
+<td>${klienti.emri}</td>
+
+<td>${klienti.telefoni}</td>
+
+<td>${klienti.adresa}</td>
+
+</tr>
+
+`;
+
+
+
+numer++;
+
 
 });
+
+
+}
+
+
+
+shfaqKlientet();
